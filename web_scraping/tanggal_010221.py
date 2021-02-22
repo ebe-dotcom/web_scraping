@@ -1,4 +1,4 @@
-# Proses pembuatan file : New Project, Git, Github, share project into github --> masuk ke repo ebe-dotcom
+#jadwal sholat ashar tanggal 21 februari 2021
 
 import bs4
 import requests
@@ -7,13 +7,10 @@ url = 'http://jadwalsholat.pkpu.or.id/?id=83'
 contents = requests.get(url)
 
 response = bs4.BeautifulSoup(contents.text, features='html.parser')  # menampilkan seluruh isi web html
+data = response.find_all('tr','table_light')  # tipe data tr yang memiliki komponen tabel dark
+print(data[0])  # Hasil print data diawali kurung siku dan diakhiri kurung siku, berarti data itu = data array/list
 
-data = response.find_all('tr', 'table_highlight')  # tipe data tr yang memiliki komponen tabel highlight
-print(data)  # Hasil print data diawali kurung siku dan diakhiri kurung siku, berarti data itu = data array/list
-
-# so harus untuk mengolahnya ambil elemen pertama yaitu nomor 0
-print(data[0])  # menghasilkan data tanpa kurung siku
-
+#jadwal sholat ashar tanggal 1 februari 2021
 sholat = {}
 i = 0
 data = data[0]
@@ -32,5 +29,4 @@ for d in data :
     i += 1
 
 print(sholat)
-print('waktu sholat ashar',sholat['ashar'])
-
+print('waktu sholat ashar tanggal 01 februari 2021',sholat['ashar'])

@@ -8,12 +8,13 @@ contents = requests.get(url)
 
 response = bs4.BeautifulSoup(contents.text, features='html.parser')  # menampilkan seluruh isi web html
 
-data = response.find_all('tr', 'table_highlight')  # tipe data tr yang memiliki komponen tabel highlight
+data = response.find_all('tr','table_dark')  # tipe data tr yang memiliki komponen tabel dark
 print(data)  # Hasil print data diawali kurung siku dan diakhiri kurung siku, berarti data itu = data array/list
 
 # so harus untuk mengolahnya ambil elemen pertama yaitu nomor 0
 print(data[0])  # menghasilkan data tanpa kurung siku
 
+#jadwal sholat ashar tanggal 2 februari 2021
 sholat = {}
 i = 0
 data = data[0]
@@ -32,5 +33,5 @@ for d in data :
     i += 1
 
 print(sholat)
-print('waktu sholat ashar',sholat['ashar'])
+print('waktu sholat ashar tanggal 02 februari 2021',sholat['ashar'])
 
