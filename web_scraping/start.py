@@ -1,9 +1,9 @@
 # Proses pembuatan file : New Project, Git, Github, share project into github --> masuk ke repo ebe-dotcom
-import requests
+from requests import get
 import bs4
 
 url = 'http://jadwalsholat.pkpu.or.id/?id=83'
-contents = requests.get(url)
+contents = get(url)
 
 response = bs4.BeautifulSoup(contents.text, features='html.parser')  # menampilkan seluruh isi web html
 
