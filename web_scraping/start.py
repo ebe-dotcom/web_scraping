@@ -1,7 +1,6 @@
 # Proses pembuatan file : New Project, Git, Github, share project into github --> masuk ke repo ebe-dotcom
-
-import bs4
 import requests
+import bs4
 
 url = 'http://jadwalsholat.pkpu.or.id/?id=83'
 contents = requests.get(url)
